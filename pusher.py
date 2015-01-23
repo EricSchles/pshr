@@ -6,7 +6,6 @@ def run(first="",second=False):
     call(["git","commit","-a","-m",first])
     call(["git","push"])
     if on_heroku:
-        print "gets here"
         call(["git","push","heroku","master"])
 
 if __name__ == '__main__':
