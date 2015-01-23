@@ -3,12 +3,10 @@ def run(first="",second=False):
     from subprocess import call
 
     call(["git","add","-A"])
-    time.sleep(0.01)
     call(["git","commit","-a","-m",first])
-    time.sleep(0.01)
     call(["git","push"])
-    time.sleep(0.01)
     if on_heroku:
+        print "gets here"
         call(["git","push","heroku","master"])
 
 if __name__ == '__main__':
