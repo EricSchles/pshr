@@ -1,15 +1,19 @@
-def run():
+def run(first="",second=False):
     from subprocess import call
-    from sys import argv
 
     call(["git","add","-A"])
-    if argv[1] != "-h":
-        call(["git","commit","-a","-m",argv[1]])
-    else:
-        call(["git","commit","-a","-m",argv[2]])
+    call(["git","commit","-a","-m",first])
     call(["git","push"])
-    if argv[1] == "-h":
+    if on_heroku:
         call(["git","push","heroku","master"])
 
 if __name__ == '__main__':
-    run()
+    from sys import argv
+    msg = argv[1]
+    on_heroku = False
+    try:
+        msg = argv[2]
+        on_heroku = True
+    except:
+        run(first=msg,second=on_heroku)
+    run(first=msg,second=on_heroku)
