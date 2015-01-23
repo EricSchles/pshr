@@ -1,12 +1,13 @@
+import time
 def run(first="",second=False):
     from subprocess import call
 
     call(["git","add","-A"])
-    print "first"
+    time.sleep(0.001)
     call(["git","commit","-a","-m",first])
-    print "second"
+    time.sleep(0.001)
     call(["git","push"])
-    print "third"
+    time.sleep(0.001)
     if on_heroku:
         call(["git","push","heroku","master"])
 
@@ -20,5 +21,3 @@ if __name__ == '__main__':
     except:
         run(first=msg,second=on_heroku)
     run(first=msg,second=on_heroku)
-
-#test
