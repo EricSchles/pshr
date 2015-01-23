@@ -5,7 +5,7 @@ def run(first="",second=False):
     call(["git","add","-A"])
     call(["git","commit","-a","-m",first])
     call(["git","push"])
-    if on_heroku:
+    if second:
         call(["git","push","heroku","master"])
 
 if __name__ == '__main__':
