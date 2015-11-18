@@ -20,7 +20,7 @@ if __name__ == '__main__':
     parser.add_argument("--message",type=str, help="the message to be committed every n minutes to github")
     parser.add_argument("--on-heroku",type=bool, help="if you are pushing to heroku")
     parser.add_argument("--push-n-seconds",type=int, help="how long to wait between pushes in seconds")
-    parse.add_argument("--continuous",type=bool,help="run this script continously")
+    parser.add_argument("--continuous",type=bool,help="run this script continously")
     args = parser.parse_args()
     main(msg=args.message,on_heroku=args.on_heroku,sleep_for=args.push_n_seconds)
 
