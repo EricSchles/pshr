@@ -10,6 +10,7 @@ python pusher.py --message [commit message] --on-heroku [True/False] --push-n-se
 
 **To github: (from a program)**
 
+```
 >>> from pshr import pusher
 >>> pusher.main(msg="Hello there")
-
+```
