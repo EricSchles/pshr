@@ -1,11 +1,12 @@
 import time
 import argparse
 from subprocess import call
+from tooling import *
 
 def main(msg,on_heroku=False,sleep_for=300,continuous=False):
     while True:
-        call(["git","add","-A"])
-        call(["git","commit","-a","-m",msg])
+        call(["git","add","--all",":/"])
+        call(["git","commit","-m",msg])
         call(["git","push"])
         if on_heroku:
             call(["git","push","heroku","master"])
@@ -20,8 +21,12 @@ if __name__ == '__main__':
     parser.add_argument("--message",type=str, help="the message to be committed every n minutes to github")
     parser.add_argument("--on-heroku",type=bool, help="if you are pushing to heroku")
     parser.add_argument("--push-n-seconds",type=int, help="how long to wait between pushes in seconds")
-    parse.add_argument("--continuous",type=bool,help="run this script continously")
+    parser.add_argument("--continuous",type=bool,help="run this script continously")
+    parser.add_argument("--generate-gitignore",type=bool,help="generate a gitignore for your code")
     args = parser.parse_args()
+    if args.generate_gitignore: generate_gitignore()
     main(msg=args.message,on_heroku=args.on_heroku,sleep_for=args.push_n_seconds)
+    
+        
 
 
