@@ -4,7 +4,7 @@ from subprocess import call
 
 def main(msg,on_heroku=False,sleep_for=300,continuous=False):
     while True:
-        call(["git","add","--all"])
+        call(["git","add","--all",":/"])
         call(["git","commit","-m",msg])
         call(["git","push"])
         if on_heroku:
