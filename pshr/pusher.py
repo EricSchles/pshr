@@ -1,7 +1,6 @@
 import time
 import argparse
 from subprocess import call
-from tooling import *
 from cntr import counter
 import os
 def main(msg,on_heroku=False,sleep_for=300,continuous=False,analysis=False,extension=".py",roots=[os.getcwd()]):
