@@ -62,8 +62,8 @@ def counter(extension,roots=[]):
                     month_totals[month].total_len += file_len(file) #per month
                     total_len += file_len(file) #total
 
-    print("You worked best between",str(ave_hour/num_files),"and",str((ave_hour/num_files)+1) ,"so far")
-    print("You've written", total_len ,"lines so far.")
+    print("You worked best between {} and {} so far".format(str(ave_hour/num_files),str((ave_hour/num_files) + 1)))
+    print("You've written {} lines so far.".format(total_len))
     print() 
 
     month_translate = {
@@ -88,9 +88,9 @@ def counter(extension,roots=[]):
             month_totals[month].ave_hour = month_totals[month].ave_hour/month_totals[month].num_files
         else:
             month_totals[month].ave_hour = 0
-        print("You worked best between", (str(month_totals[month].ave_hour))," and ",str(month_totals[month].ave_hour +1) ," so far.")
         
-        print("You've written",month_totals[month].total_len," lines so far.")
+        print("You worked best between {} and {} so far".format((str(month_totals[month].ave_hour),str(month_totals[month].ave_hour + 1))))
+        print("You've written {} lines so far.".format(month_totals[month].total_len))
         print() 
                 
 if __name__ == '__main__':
