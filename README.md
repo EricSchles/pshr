@@ -14,3 +14,12 @@ A simple command line tool that pushes either to git or git and heroku
 >>> from pshr import pusher
 >>> pusher.main(msg="Hello there")
 ```
+
+OR 
+
+**push to github every 2 seconds:
+
+```
+>>> from pshr import pusher
+>>> pusher.main(msg="testing",sleep_for=2,continuous=True)
+```
