@@ -6,7 +6,7 @@ A simple command line tool that pushes either to git or git and heroku
 
 **To github: (from the command line)**
 
-python pusher.py --message [commit message] --on-heroku [True/False] --push-n-seconds [some number of seconds] --continuous [True/False]
+`python pusher.py --message [commit message] --on-heroku [True/False] --push-n-seconds [some number of seconds] --continuous [True/False]`
 
 **To github: (from a program)**
 
